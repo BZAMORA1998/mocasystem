@@ -17,4 +17,8 @@ export class EmpresaService {
     getEmpresa(secuenciaEmpresa):Observable<any>{
       return this.apiService.ApiCallSinToken("GET",`/empresa/${secuenciaEmpresa}`,null,null);
     }
+
+    getFoto(secuenciaEmpresa):Observable<any>{
+      return this.apiService.ApiCallSinToken("GET",`/foto/${secuenciaEmpresa}?nemonico=PROMOCION`,null,null);
+    }
 }

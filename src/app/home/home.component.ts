@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDatosEmpresa(this.secuenciaEmpresa);
+    this.getFoto(this.secuenciaEmpresa)
   }
  
   data=[];
@@ -46,4 +47,22 @@ export class HomeComponent implements OnInit {
     ); 
   }
 
+  foto:any;
+  getFoto(secuenciaEmpresa){
+    this._empresaService.getFoto(secuenciaEmpresa).subscribe(
+        Response=>{
+          this.foto=Response.data;
+    
+          this.foto.forEach(data=>{
+            data.foto="data:image/png;base64,"+data.foto;
+          });
+
+          console.log(this.foto);
+         
+        },
+        error=>{
+          console.log(error.error.message);
+        }
+    ); 
+  }
 }
