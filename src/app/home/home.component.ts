@@ -32,13 +32,7 @@ export class HomeComponent implements OnInit {
           console.log(this.data);
 
           this.data.forEach(datos=>{
-            if(datos.nemonico=="MISION"){
-              this.mision=datos;
-            }else if(datos.nemonico=="VISION"){
-              this.vision=datos;
-            }else if(datos.nemonico=="QUIENES_SOMOS"){
-              this.quienes_somos=datos;
-            }
+            datos.foto="data:image/png;base64,"+datos.foto;
           });
         },
         error=>{

@@ -18,6 +18,20 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.getEmpresa(this.secuenciaEmpresa);
+    this.getOpcionesMenu(this.secuenciaEmpresa,"PRINCIPAL");
+  }
+
+  opcionesMenu=[];
+  getOpcionesMenu(secuenciaEmpresa,nemonico){
+    this._empresaService.getOpcionesMenu(secuenciaEmpresa,nemonico).subscribe(
+        Response=>{
+          this.opcionesMenu=Response.data;
+          console.log(this.opcionesMenu);
+        },
+        error=>{
+          console.log(error.error.message);
+        }
+    ); 
   }
 
   getEmpresa(secuenciaEmpresa){

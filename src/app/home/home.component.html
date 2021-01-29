@@ -23,30 +23,14 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-8 mt-2">
-            <div class="card mt-2">
+            <div *ngFor="let item of data; index as i;" class="card mt-2">
                 <div class="card-body">
-                  <h4 class="card-title"> {{quienes_somos.nombre  | titlecase }}</h4>
+                  <h4 class="card-title"> {{item.nombre | titlecase}}</h4>
                   <p class="card-text text-justify">
-                  {{quienes_somos.descripcion  | titlecase }}
+                  {{item.descripcion}}
                   </p>
                 </div>
             </div>   
-            <div class="card mt-2">
-                <div class="card-body">
-                  <h4 class="card-title"> {{mision.nombre  | titlecase }}</h4>
-                  <p class="card-text text-justify">
-                   {{mision.descripcion  | titlecase }}
-                  </p>
-                </div>
-            </div>  
-            <div class="card mt-2">
-                <div class="card-body">
-                  <h4 class="card-title"> {{vision.nombre | titlecase }}</h4>
-                  <p class="card-text text-justify">
-                    {{vision.descripcion | titlecase }}
-                  </p>
-                </div>
-            </div>                      
         </div>  
     </div>
   </div>

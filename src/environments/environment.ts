@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-   apiUrl:"https://mocasystem.herokuapp.com",
-   secuanciaEmpresa:1
-  //apiUrl:"http://localhost:8082"
+   apiUrl:"https://sistema-ventas-api.herokuapp.com/ventas/v1",
+   secuanciaEmpresa:1,
+   //apiUrl:"http://localhost:8081/ventas/v1"
 };
 
 /*

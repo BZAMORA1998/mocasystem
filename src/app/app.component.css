@@ -26,7 +26,7 @@ header{
 }
 
 .active{
-    border-bottom: 1px solid red;
+    border-bottom: 2px solid red;
 }
 
 .mr-auto, .mx-auto {
